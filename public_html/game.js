@@ -11,7 +11,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
 	bgReady = true;
 };
-bgImage.src = "images/background.png";
+bgImage.src = "https://raw.github.com/lostdecade/simple_canvas_game/master/images/background.png";
 
 // Hero image
 var heroReady = false;
@@ -19,7 +19,7 @@ var heroImage = new Image();
 heroImage.onload = function () {
 	heroReady = true;
 };
-heroImage.src = "images/hero.png";
+heroImage.src = "https://raw.github.com/lostdecade/simple_canvas_game/master/images/hero.png";
 
 // Monster image
 var monsterReady = false;
@@ -27,7 +27,7 @@ var monsterImage = new Image();
 monsterImage.onload = function () {
 	monsterReady = true;
 };
-monsterImage.src = "images/monster.png";
+monsterImage.src = "https://raw.github.com/lostdecade/simple_canvas_game/master/images/monster.png";
 
 // Game objects
 var hero = {
@@ -41,10 +41,10 @@ var keysDown = {};
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
-}, false);
+}, false);                                  //the two false at the end 4th parameters can be turned true with no affect. How come?
 
-addEventListener("keyup", function (e) {
-	delete keysDown[e.keyCode];
+addEventListener("keyup", function (e) {    //what is the 'e' parameter anyway?
+	delete keysDown[e.keyCode];         //keysDown[e.keyCode] = false; won't work, why?
 }, false);
 
 // Reset the game when the player catches a monster
